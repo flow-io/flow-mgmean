@@ -2,10 +2,12 @@ var eventStream = require( 'event-stream' ),
 	flowFactory = require( './../lib' );
 
 // Create some data...
-var data = new Array( 1000 );
+// var data = [1,5,3,6,8,7,-8,2,0,1,56,8,9,5,8];
+var data = new Array( 50 );
 for ( var i = 0; i < data.length; i++ ) {
-	data[ i ] = Math.random();
+	data[ i ] = Math.round( Math.random() * 100 ) - 5;
 }
+
 
 // Create a readable stream:
 var readStream = eventStream.readArray( data );
